@@ -1,0 +1,1 @@
+json.partial! "login_details/login_detail", login_detail: @login_detail

@@ -1,0 +1,1 @@
+json.array! @login_details, partial: 'login_details/login_detail', as: :login_detail

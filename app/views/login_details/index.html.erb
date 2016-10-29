@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Login Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Password</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @login_details.each do |login_detail| %>
+      <tr>
+        <td><%= login_detail.user_name %></td>
+        <td><%= login_detail.password %></td>
+        <td><%= login_detail.person %></td>
+        <td><%= link_to 'Show', login_detail %></td>
+        <td><%= link_to 'Edit', edit_login_detail_path(login_detail) %></td>
+        <td><%= link_to 'Destroy', login_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Login Detail', new_login_detail_path %>
