@@ -10,7 +10,7 @@ class FamiliesController < ApplicationController
   # GET /families/1
   # GET /families/1.json
   def show
-    @family = @family.sitters
+    
   end
 
   # GET /families/new

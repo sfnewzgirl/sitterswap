@@ -11,7 +11,34 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div id="new-family-form">
+    <%= semantic_form_for @person do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :family_name %>
+      <% end %>
+      <%= f.actions %>
+    <% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+      </div>
+    <% end %>
+
+  <div class="form-group row">
+    <label for="example-search-input" class="col-xs-2 col-form-label">Search</label>
+    <div class="col-xs-10">
+      <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+    </div>
   </div>
-<% end %>
+  <div id="find-a-family">
+    <%= semantic_form_for @person do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :family_name %>
+      <% end %>
+      <%= f.actions %>
+    <% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+      </div>
+    <% end %>

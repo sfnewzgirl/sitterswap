@@ -16,19 +16,22 @@ class CreatePeople < ActiveRecord::Migration[5.0]
     end
 
     create_table :families do |t|
+      t.string :family_name
 
       t.timestamps
+
+      t.index [:family_name], name: "index_families_on_family_name"
     end
 
     create_table :login_details do |t|
-      t.string :user_name
+      t.string :email
       t.string :password_digest
       t.references :person, foreign_key: true
 
       t.timestamps
 
-      t.index [:user_name, :password_digest], name: "index_login_details_on_user_name_and_password_digest"
-      t.index [:user_name], name: "index_login_details_on_user_name"
+      t.index [:email, :password_digest], name: "index_login_details_on_email_and_password_digest"
+      t.index [:email], name: "index_login_details_on_email"
 
     end
 

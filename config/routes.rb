@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'application#index', as: 'root'
+  get '/', to: 'login_details#index', as: 'root'
 
   resources :login_details
   resources :families

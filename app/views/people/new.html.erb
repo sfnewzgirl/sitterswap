@@ -4,9 +4,12 @@
   <%= f.inputs do %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :email, type: :email, prepend: "@" %>
+    <%= f.input :phone_number %>
+    <%= f.input :city %>
+    <%= f.input :email %>
+    <%= f.input :password %>
   <% end %>
   <%= f.actions %>
 <% end %>
 
-<%= link_to 'Back', people_path %>
+<%= link_to 'Back', root_path %>

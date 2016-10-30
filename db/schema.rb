@@ -13,8 +13,10 @@
 ActiveRecord::Schema.define(version: 20161029171417) do
 
   create_table "families", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "family_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["family_name"], name: "index_families_on_family_name"
   end
 
   create_table "family_people", force: :cascade do |t|
@@ -26,14 +28,14 @@ ActiveRecord::Schema.define(version: 20161029171417) do
   end
 
   create_table "login_details", force: :cascade do |t|
-    t.string   "user_name"
+    t.string   "email"
     t.string   "password_digest"
     t.integer  "person_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["email", "password_digest"], name: "index_login_details_on_email_and_password_digest"
+    t.index ["email"], name: "index_login_details_on_email"
     t.index ["person_id"], name: "index_login_details_on_person_id"
-    t.index ["user_name", "password_digest"], name: "index_login_details_on_user_name_and_password_digest"
-    t.index ["user_name"], name: "index_login_details_on_user_name"
   end
 
   create_table "people", force: :cascade do |t|

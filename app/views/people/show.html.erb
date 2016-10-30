@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<!-- if !current_user -->
+<!-- <h1>You need to make a login!</h1>
+<%= link_to 'Create Login', new_login_detail_url %> -->
+
+<h1>Your Profile Details</h1>
+
 <p>
   <strong>First name:</strong>
   <%= @person.first_name %>
@@ -26,7 +32,19 @@
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Delete Profile', person_path(@person) %> |
 <%= link_to 'Back', people_path %>
 
+<!-- if role is caregiver, show one family -->
+<h2>Your Family</h2>
+<%= link_to 'Add Family', families_path(@person) %> |
 <%= render "families" %>
+
+<!-- if role is sitter, show all families -->
+<h2>Your Families</h2>
+<%= link_to 'Add Family', families_path(@person) %> |
+<%= render "families" %>
+
+<!-- if role is caregiver, show all sitters -->
+<h2>Your Sitters</h2>
 <%= render "sitters" %>
