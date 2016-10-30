@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'login_details#index', as: 'root'
+  get '/', to: 'welcome#home', as: 'root'
 
-  resources :login_details
+  get '/about', to: 'welcome#about', as: "about_page"
+  get '/login', to: 'sessions#new', as: "login"
+  post '/sessions', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
+  # resources :login_details
   resources :families
   resources :people
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end

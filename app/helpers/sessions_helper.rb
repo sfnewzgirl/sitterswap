@@ -1,7 +1,7 @@
 module SessionsHelper
 
   def login(person)
-    session[:person_id] = person.id
+    session[:person_id] = person
     @current_user = person
   end
 
@@ -12,5 +12,4 @@ module SessionsHelper
   def logout
     @current_user = session[:person_id] = nil
   end
-
 end

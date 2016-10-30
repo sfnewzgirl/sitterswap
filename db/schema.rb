@@ -27,25 +27,16 @@ ActiveRecord::Schema.define(version: 20161029171417) do
     t.index ["person_id"], name: "index_family_people_on_person_id"
   end
 
-  create_table "login_details", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.integer  "person_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["email", "password_digest"], name: "index_login_details_on_email_and_password_digest"
-    t.index ["email"], name: "index_login_details_on_email"
-    t.index ["person_id"], name: "index_login_details_on_person_id"
-  end
-
   create_table "people", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
     t.string   "phone_number"
     t.string   "city"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["email", "password_digest"], name: "index_people_on_email_and_password_digest"
     t.index ["email"], name: "index_people_on_email"
   end
 
