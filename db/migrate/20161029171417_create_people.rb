@@ -22,12 +22,12 @@ class CreatePeople < ActiveRecord::Migration[5.0]
 
     create_table :login_details do |t|
       t.string :user_name
-      t.string :password
+      t.string :password_digest
       t.references :person, foreign_key: true
 
       t.timestamps
 
-      t.index [:user_name, :password], name: "index_login_details_on_user_name_and_password"
+      t.index [:user_name, :password_digest], name: "index_login_details_on_user_name_and_password_digest"
       t.index [:user_name], name: "index_login_details_on_user_name"
 
     end

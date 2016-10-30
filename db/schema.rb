@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20161029171417) do
 
   create_table "login_details", force: :cascade do |t|
     t.string   "user_name"
-    t.string   "password"
+    t.string   "password_digest"
     t.integer  "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.index ["person_id"], name: "index_login_details_on_person_id"
-    t.index ["user_name", "password"], name: "index_login_details_on_user_name_and_password"
+    t.index ["user_name", "password_digest"], name: "index_login_details_on_user_name_and_password_digest"
     t.index ["user_name"], name: "index_login_details_on_user_name"
   end
 
