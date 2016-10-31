@@ -9,11 +9,11 @@ class CreatePeople < ActiveRecord::Migration[5.0]
       t.string :phone_number
       t.string :city
       t.string :email
-      t.string :password_digest
+      t.string :password
 
       t.timestamps
 
-      t.index [:email, :password_digest], name: "index_people_on_email_and_password_digest"
+      t.index [:email, :password], name: "index_people_on_email_and_password_digest"
       t.index [:email], name: "index_people_on_email"
     end
 
